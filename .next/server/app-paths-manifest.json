@@ -1,7 +1,14 @@
 {
-  "/(pages)/homee/page": "app/(pages)/homee/page.js",
+  "/_not-found": "app/_not-found.js",
+  "/(pages)/about/page": "app/(pages)/about/page.js",
+  "/(pages)/career/page": "app/(pages)/career/page.js",
+  "/(pages)/contact/page": "app/(pages)/contact/page.js",
   "/(pages)/courses/[id]/page": "app/(pages)/courses/[id]/page.js",
   "/(pages)/courses/page": "app/(pages)/courses/page.js",
+  "/(pages)/home/page": "app/(pages)/home/page.js",
+  "/(pages)/homee/page": "app/(pages)/homee/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
   "/api/courses/route": "app/api/courses/route.js",
   "/api/courses/[id]/route": "app/api/courses/[id]/route.js"
 }
