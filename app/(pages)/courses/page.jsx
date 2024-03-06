@@ -10,14 +10,16 @@ function Courses() {
   const [isLoading, setLoading] = useState(true)
  
   useEffect(() => {
-    fetch('http://localhost:3000/api/courses')
+    fetch('/api/courses')
       .then((res) => res.json())
       .then((data) => {
         setCourses(data.courses)
         setLoading(false)
+        
       })
   }, [])
-  // console.log(courses[1].topics[1].content[1]);
+  console.log("THE DATA ISSSSs",JSON.stringify(courses));
+  
   return (
     <div className='flex flex-wrap justify-between'>
       {courses.map((c)=>(

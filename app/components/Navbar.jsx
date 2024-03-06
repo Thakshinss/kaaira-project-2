@@ -4,7 +4,7 @@ import { AlignJustify, Menu } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { useState } from 'react'
 
 const navLink = [
   {
@@ -39,6 +39,7 @@ const navLink = [
 
 const Navbar = () => {
   const pathname = usePathname()
+  const [isOpen,setIsOpen] = useState(false)
   return (
 
     <nav className='' >
@@ -64,10 +65,28 @@ const Navbar = () => {
         }
       </ul>
       <ul className='md:hidden'>
-        <Menu />
+        <Menu onClick={()=>{
+          setIsOpen(!isOpen);
+          console.log(isOpen);
+          }} />
       </ul>
-
       </div>
+      {/* <div className={`${isOpen===true ?"bg-green-200":"bg-blue-200"}`}> */}
+        <div className={`md:hidden h-screen w-3/4 absolute right-0 top-30 transition duration-150 ease-in-out ${
+                    isOpen === true
+                      ? 'border-l-2 border-primary bg-blue-200'
+                      : 'hidden'
+                  }`}>
+          <div className='border flex flex-col'>
+          {
+          navLink.map((link)=>(
+              <Link onClick={()=>setIsOpen(!isOpen)} className={`p-4 border ${pathname === link.path ? 'active' : ''}`} href={link.path} key={link.id}>{link.name}</Link>
+          ))
+        }
+          </div>
+        </div>
+      {/* // </div> */}
+
       
     </nav>
     

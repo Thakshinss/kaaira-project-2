@@ -11,7 +11,7 @@ function CourseDetails({params}) {
   const id = params.id
  
   useEffect(() => {
-    fetch(`http://localhost:3000/api/courses/${id}`)
+    fetch(`/api/courses/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCourse(data.post)
